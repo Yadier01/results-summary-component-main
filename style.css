@@ -1,0 +1,179 @@
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v5/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcgWZa4Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v5/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcVGFa4Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v5/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcM2Fa4Q.ttf) format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+body {
+  background-color: hsl(221, 100%, 96%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+main {
+  margin: 0 auto;
+}
+.container {
+  display: grid;
+  grid-template-columns: 20rem 20rem;
+  margin: 0 10%;
+  justify-content: center;
+  background-color: hsl(0, 0%, 100%);
+}
+.container-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 1rem 0 2rem 0;
+  border-radius: 20px;
+  background-image: linear-gradient(40deg, hsl(241, 81%, 54%) 0%, hsl(244, 86%, 57%) 45%, hsl(247, 91%, 61%) 83%, hsl(249, 96%, 64%) 98%, hsl(252, 100%, 67%) 100%);
+}
+.container-left h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.container-left .circle {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(0deg, hsl(241, 72%, 46%) 16%, hsl(249, 72%, 46%) 50%, hsl(256, 72%, 46%) 100%);
+  border-radius: 50%;
+  margin: 2.3rem 0 1rem 0;
+  transition: all 0.13s ease-in-out;
+  text-align: center;
+}
+.container-left .circle h1 {
+  color: white;
+  font-weight: 800;
+  font-size: 3rem;
+}
+.container-left .circle h3 {
+  color: hsl(241, 100%, 89%);
+}
+.container-left .circle:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+.container-left .lower-content {
+  width: 75%;
+}
+.container-left .lower-content h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.container-left .lower-content p {
+  font-size: 18px;
+}
+.container-right {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 20px;
+  padding: 2rem;
+}
+.container-right h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.container-right ul {
+  list-style: none;
+  padding: 1rem 0 0 0;
+}
+.container-right .summarry {
+  margin: 16px 0;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.container-right .summarry div {
+  display: flex;
+  gap: 10px;
+}
+.container-right .summarry:hover {
+  transform: scale(1.2);
+}
+.container-right .first {
+  background-color: hsla(0, 100%, 67%, 0.1);
+}
+.container-right .second {
+  background-color: hsla(39, 100%, 56%, 0.1);
+}
+.container-right .third {
+  background-color: hsla(166, 100%, 37%, 0.1);
+}
+.container-right .fourth {
+  background-color: hsla(234, 85%, 45%, 0.1);
+}
+.container-right #button {
+  background-color: hsl(224, 30%, 27%);
+  border: none;
+  border-radius: 30px;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+.container-right #button:hover,
+.container-right #button:focus {
+  transform: scale(1.1);
+  background-image: linear-gradient(40deg, hsl(241, 81%, 54%) 0%, hsl(244, 86%, 57%) 45%, hsl(247, 91%, 61%) 83%, hsl(249, 96%, 64%) 98%, hsl(252, 100%, 67%) 100%);
+}
+.container-right #button a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+@media screen and (max-width: 675px) {
+  body {
+    height: 100%;
+  }
+  main {
+    height: 100%;
+  }
+  .container {
+    grid-template-columns: 1fr;
+    margin: 0%;
+    height: 100vh;
+  }
+  .container .container-left {
+    border-radius: 0 0 30px 30px;
+    padding: 2.5rem 0;
+  }
+  .container .container-left .circle {
+    height: 150px;
+    width: 150px;
+  }
+}

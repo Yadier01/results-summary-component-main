@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
+//!primary
+
+@primaryLightred: hsla(0, 100%, 67%, 0.1);
+@primaryOrangeyyellow: hsla(39, 100%, 56%, 0.1);
+@primaryGreenteal: hsla(166, 100%, 37%, 0.1);
+@primaryCobaltblue: hsla(234, 85%, 45%, 0.1);
+
+//! ### Neutral
+
+@White: hsl(0, 0%, 100%);
+@paleBlue: hsl(221, 100%, 96%);
+@lightLavender: hsl(241, 100%, 89%);
+@darkGrayBlue: hsl(224, 30%, 27%);
+@fontSizeParagraphs: 18px;
+
+//!font-weight
+@font-weight-regular: 500;
+@font-weight-medium: 700;
+@font-weight-bold: 800;
+
+@background: linear-gradient(
+  40deg,
+  hsl(241deg 81% 54%) 0%,
+  hsl(244deg 86% 57%) 45%,
+  hsl(247deg 91% 61%) 83%,
+  hsl(249deg 96% 64%) 98%,
+  hsl(252deg 100% 67%) 100%
+);
+
+@background-circle: linear-gradient(
+  0deg,
+  hsl(241deg 72% 46%) 16%,
+  hsl(249deg 72% 46%) 50%,
+  hsl(256deg 72% 46%) 100%
+);
+
+//! first time trying to use less. (Im trying to decide between less and sass)
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+body {
+  background-color: @paleBlue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  // width: 100%;
+  // max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 20rem 20rem;
+  margin: 0 10%;
+  // max-width: 30%;
+  justify-content: center;
+  background-color: @White;
+}
+
+.container-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 1rem 0 2rem 0;
+  border-radius: 20px;
+  background-image: @background;
+
+  h2 {
+    font-size: 1.7rem;
+    font-weight: @font-weight-regular;
+    margin-bottom: 1rem;
+  }
+
+  .circle {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: @background-circle;
+    border-radius: 50%;
+    margin: 2.3rem 0 1rem 0;
+    transition: all 0.13s ease-in-out;
+    text-align: center;
+
+    h1 {
+      color: white;
+      font-weight: 800;
+      font-size: 3rem;
+    }
+
+    h3 {
+      color: @lightLavender;
+      // font-weight: 500;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .lower-content {
+    width: 75%;
+
+    h2 {
+      font-size: 1.7rem;
+      font-weight: @font-weight-medium;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+}
+
+.container-right {
+  background-color: @White;
+  border-radius: 20px;
+  padding: 2rem;
+
+  h2 {
+    font-size: 1.7rem;
+    font-weight: @font-weight-regular;
+    // margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 1rem 0 0 0;
+  }
+
+  .summarry {
+    margin: 16px 0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+
+    div {
+      display: flex;
+      gap: 10px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .first {
+    background-color: @primaryLightred;
+  }
+
+  .second {
+    background-color: @primaryOrangeyyellow;
+  }
+
+  .third {
+    background-color: @primaryGreenteal;
+  }
+
+  .fourth {
+    background-color: @primaryCobaltblue;
+  }
+
+  #button {
+    background-color: @darkGrayBlue;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: @font-weight-medium;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    text-align: center;
+    margin: 30px 0 0 0;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      background-image: @background; //!transition not working here because of linear-gradient
+    }
+
+    a {
+      text-decoration: none;
+      color: @White;
+    }
+  }
+}
+
+//## Media Queries
+@media screen and (max-width: 675px) {
+  body {
+    height: 100%;
+  }
+
+  main {
+    height: 100%;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    margin: 0%;
+    height: 100vh;
+
+    .container-left {
+      border-radius: 0 0 30px 30px;
+      padding: 2.5rem 0;
+
+      .circle {
+        height: 150px;
+        width: 150px;
+      }
+    }
+  }
+}
